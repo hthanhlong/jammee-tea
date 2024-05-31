@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {}
+
+@layer components {
+    body {
+        background-image: url("../assets/images/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    main {
+        height: calc(100vh - var(--nav-height));
+        padding: 24px 0;
+        overflow: hidden;
+    }
+}
+
+
+@layer utilities {
+    .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+}

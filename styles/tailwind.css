@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --nav-height: 64px;
+}
 
 @layer base {}
 

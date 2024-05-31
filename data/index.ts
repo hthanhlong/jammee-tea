@@ -204,4 +204,93 @@ export const MenuItems: MenuItem[] = [
       },
     ],
   },
+  {
+    id: 3,
+    title: "Milk Tea 2",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+    itemsRight: [
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+    ],
+    itemsLeft: [
+      {
+        id: uuidv4(),
+        type: "banner",
+        alt: "burger",
+        url: banner1,
+        name: "burger",
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+      {
+        id: uuidv4(),
+        type: "item",
+        describe:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
+        thumbnail: bubleTea,
+        name: "Milk Foam Green Tea",
+        price: 9.04,
+      },
+    ],
+  },
 ]

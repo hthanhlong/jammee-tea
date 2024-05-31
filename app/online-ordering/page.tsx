@@ -5,19 +5,20 @@ import { mainBanner } from "assets"
 import Section from "components/Section/Section"
 import Wrapper from "components/Wrapper/Wrapper"
 import { MenuItems } from "data"
-import { useSelectedItem } from "features/selectedItem/hooks/useSelectedIem"
-import SelectedItemProvider from "features/selectedItem/provider"
+import { useSelectedItemStore } from "stores/selected-item-store"
 
 export default function OnlineOrdering() {
   const ref = useRef(null)
 
-  const { setSelectedItem } = useSelectedItem()
+  const { setSelectedItem } = useSelectedItemStore((state) => state)
 
   useEffect(() => {
     const handleClick = (e: any) => {
       if (e.toElement.nodeName === "MAIN") {
         setSelectedItem({
           id: "",
+          name: "",
+          price: 0,
         })
       }
     }
@@ -29,27 +30,25 @@ export default function OnlineOrdering() {
   }, [setSelectedItem])
 
   return (
-    <SelectedItemProvider>
-      <Wrapper>
-        <div ref={ref}>
+    <Wrapper>
+      <div ref={ref}>
+        <div>
           <div>
-            <div>
-              <Image src={mainBanner} alt="main-banner" width={1000} height={100} />
-            </div>
-            <div className="content">
-              {MenuItems.map((menu) => (
-                <Section
-                  key={menu.id}
-                  title={menu.title}
-                  description={menu.description}
-                  itemsRight={menu.itemsRight}
-                  itemsLeft={menu.itemsLeft}
-                />
-              ))}
-            </div>
+            <Image src={mainBanner} alt="main-banner" width={1000} height={100} />
+          </div>
+          <div className="content">
+            {MenuItems.map((menu) => (
+              <Section
+                key={menu.id}
+                title={menu.title}
+                description={menu.description}
+                itemsRight={menu.itemsRight}
+                itemsLeft={menu.itemsLeft}
+              />
+            ))}
           </div>
         </div>
-      </Wrapper>
-    </SelectedItemProvider>
+      </div>
+    </Wrapper>
   )
 }

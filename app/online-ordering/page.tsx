@@ -1,11 +1,10 @@
 "use client"
 import Image from "next/image"
-// import { useEffect, useRef } from "react"
 import { mainBanner } from "assets"
 import Section from "components/Section/Section"
 import Wrapper from "components/Wrapper/Wrapper"
 import { MenuItems } from "data"
-// import { useSelectedItemStore } from "stores/selected-item-store"
+import OrderDialog from "features/order/components/OrderDialog"
 
 export default function OnlineOrdering() {
   // const ref = useRef(null)
@@ -30,21 +29,24 @@ export default function OnlineOrdering() {
   // }, [setSelectedItem])
 
   return (
-    <Wrapper>
-      <div>
-        <Image src={mainBanner} alt="main-banner" width={1000} height={100} />
-      </div>
-      <div className="content">
-        {MenuItems.map((menu) => (
-          <Section
-            key={menu.id}
-            title={menu.title}
-            description={menu.description}
-            itemsRight={menu.itemsRight}
-            itemsLeft={menu.itemsLeft}
-          />
-        ))}
-      </div>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <div>
+          <Image src={mainBanner} alt="main-banner" width={1000} height={100} />
+        </div>
+        <div className="content">
+          {MenuItems.map((menu) => (
+            <Section
+              key={menu.id}
+              title={menu.title}
+              description={menu.description}
+              itemsRight={menu.itemsRight}
+              itemsLeft={menu.itemsLeft}
+            />
+          ))}
+        </div>
+      </Wrapper>
+      <OrderDialog />
+    </>
   )
 }

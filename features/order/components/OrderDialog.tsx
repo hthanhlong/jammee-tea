@@ -7,16 +7,23 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "components/ui/dialog"
+import { useSelectedItemStore } from "stores/selected-item-store"
 
-export function DialogCloseButton() {
+export function OrderDialog() {
+  const { id, setSelectedItem } = useSelectedItemStore((state) => state)
+
+  const handleCloseDialog = () => {
+    setSelectedItem({
+      id: "",
+      name: "",
+      price: 0,
+    })
+  }
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <button>Share</button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+    <Dialog open={!!id}>
+      <DialogContent onInteractOutside={handleCloseDialog} className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Share link</DialogTitle>
           <DialogDescription>Anyone who has this link will be able to view this.</DialogDescription>
@@ -35,7 +42,9 @@ export function DialogCloseButton() {
         </div>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
-            <button type="button">Close</button>
+            <button onClick={handleCloseDialog} type="button">
+              Close
+            </button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

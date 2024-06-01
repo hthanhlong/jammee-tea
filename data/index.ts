@@ -355,35 +355,4 @@ export const dataFooter: DataFooter[] = [
       info: "123-456-7890",
     },
   },
-  {
-    id: "languages",
-    title: "Languages",
-    data: [
-      {
-        id: 1,
-        name: "English",
-        key: "en",
-      },
-      {
-        id: 2,
-        name: "Japanese",
-        key: "jp",
-      },
-      {
-        id: 3,
-        name: "Korean",
-        key: "kr",
-      },
-      {
-        id: 4,
-        name: "French",
-        key: "fr",
-      },
-      {
-        id: 5,
-        name: "Marathi",
-        key: "ma",
-      },
-    ],
-  },
 ]

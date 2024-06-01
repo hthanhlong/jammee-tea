@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid"
 import { banner1, bubleTea } from "assets"
-import { MenuItem } from "types"
+import { DataFooter, MenuItem } from "types"
 
 export const NavItems = [
   {
@@ -290,6 +290,99 @@ export const MenuItems: MenuItem[] = [
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
         price: 9.04,
+      },
+    ],
+  },
+]
+
+export const dataFooter: DataFooter[] = [
+  {
+    id: "opening-hours",
+    title: "Opening Hours",
+    data: [
+      {
+        id: 1,
+        day: "Monday - Sunday",
+        time: "9:00 AM - 10:00 PM",
+      },
+    ],
+  },
+  {
+    id: "pickup",
+    title: "Pickup",
+    data: {
+      info: "Same as opening hours",
+    },
+  },
+
+  {
+    id: "payment-methods",
+    title: "Payment Methods",
+    data: [
+      {
+        id: 1,
+        name: "Visa",
+        icon: "visa",
+      },
+      {
+        id: 2,
+        name: "Mastercard",
+        icon: "mastercard",
+      },
+      {
+        id: 3,
+        name: "American Express",
+        icon: "amex",
+      },
+      {
+        id: 4,
+        name: "Paypal",
+        icon: "paypal",
+      },
+    ],
+  },
+  {
+    id: "address",
+    title: "Address",
+    data: {
+      info: "1234 Jammee St. Jammee, CA 90210",
+    },
+  },
+  {
+    id: "phone",
+    title: "Phone",
+    data: {
+      info: "123-456-7890",
+    },
+  },
+  {
+    id: "languages",
+    title: "Languages",
+    data: [
+      {
+        id: 1,
+        name: "English",
+        key: "en",
+      },
+      {
+        id: 2,
+        name: "Japanese",
+        key: "jp",
+      },
+      {
+        id: 3,
+        name: "Korean",
+        key: "kr",
+      },
+      {
+        id: 4,
+        name: "French",
+        key: "fr",
+      },
+      {
+        id: 5,
+        name: "Marathi",
+        key: "ma",
       },
     ],
   },

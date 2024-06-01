@@ -4,6 +4,7 @@
 
 :root {
     --nav-height: 64px;
+    --footer-height: 180px;
 }
 
 @layer base {}
@@ -17,8 +18,18 @@
     }
 
     main {
-        height: calc(100vh - var(--nav-height));
+        height: calc(100vh - var(--nav-height) - var(--footer-height));
         padding: 24px 0;
+        overflow: hidden;
+    }
+
+    footer {
+        height: var(--footer-height);
+        background-color: #fff;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
     }
 }

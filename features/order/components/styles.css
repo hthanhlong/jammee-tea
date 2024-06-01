@@ -1,5 +1,4 @@
 .DialogOverlay {
-    background-color: var(--black-a9);
     position: fixed;
     inset: 0;
     animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -27,13 +26,11 @@
 .DialogTitle {
     margin: 0;
     font-weight: 500;
-    color: var(--mauve-12);
     font-size: 17px;
 }
 
 .DialogDescription {
     margin: 10px 0 20px;
-    color: var(--mauve-11);
     font-size: 15px;
     line-height: 1.5;
 }

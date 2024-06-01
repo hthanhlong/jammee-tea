@@ -17,3 +17,8 @@ export interface MenuItemChild {
   url?: string | unknown
 }
 
+export interface DataFooter {
+  id: string
+  title: string
+  data: any
+}

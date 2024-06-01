@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "../styles/tailwind.css"
+import Footer from "components/Footer/Footer"
 import NavBar from "components/Navbar/Navbar"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

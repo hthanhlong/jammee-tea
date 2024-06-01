@@ -22,3 +22,9 @@ export interface DataFooter {
   title: string
   data: any
 }
+
+export interface DataOrder {
+  section: string
+  name: string
+  data: any[]
+}

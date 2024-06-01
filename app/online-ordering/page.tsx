@@ -4,7 +4,6 @@ import { mainBanner } from "assets"
 import Section from "components/Section/Section"
 import Wrapper from "components/Wrapper/Wrapper"
 import { MenuItems } from "data"
-import { OrderDialog } from "features/order/components/OrderDialog"
 
 export default function OnlineOrdering() {
   return (
@@ -25,7 +24,6 @@ export default function OnlineOrdering() {
           ))}
         </div>
       </Wrapper>
-      <OrderDialog />
     </>
   )
 }

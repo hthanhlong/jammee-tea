@@ -14,8 +14,6 @@ interface ProductItemProps {
 const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemProps) => {
   const { id: selectedId, setSelectedItem } = useSelectedItemStore((state) => state)
 
-  let active = selectedId === id
-
   return (
     <div
       onClick={() => {
@@ -25,7 +23,9 @@ const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemP
           price,
         })
       }}
-      className={`my-2 flex cursor-pointer gap-4 border-2 border-red-50 p-2 hover:bg-red-50 ${active && "bg-red-50"}`}
+      className={`my-2 flex cursor-pointer gap-4 border-2 border-red-50 p-2 hover:bg-red-50 ${
+        selectedId === id && "bg-red-50"
+      }`}
     >
       <Image src={(thumbnail as string) || ""} alt={alt || "banner image"} width={60} height={60} />
       <div className="content">

@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid"
 import { banner1, bubleTea } from "assets"
-import { DataFooter, MenuItem } from "types"
+import { DataFooter, DataOrder, MenuItem } from "types"
 
 export const NavItems = [
   {
-    id: 1,
+    section: 1,
     name: "Home",
     path: "/",
   },
@@ -314,33 +314,6 @@ export const dataFooter: DataFooter[] = [
       info: "Same as opening hours",
     },
   },
-
-  {
-    id: "payment-methods",
-    title: "Payment Methods",
-    data: [
-      {
-        id: 1,
-        name: "Visa",
-        icon: "visa",
-      },
-      {
-        id: 2,
-        name: "Mastercard",
-        icon: "mastercard",
-      },
-      {
-        id: 3,
-        name: "American Express",
-        icon: "amex",
-      },
-      {
-        id: 4,
-        name: "Paypal",
-        icon: "paypal",
-      },
-    ],
-  },
   {
     id: "address",
     title: "Address",
@@ -354,5 +327,96 @@ export const dataFooter: DataFooter[] = [
     data: {
       info: "123-456-7890",
     },
+  },
+]
+
+export const dataOrder: DataOrder[] = [
+  {
+    section: "size",
+    name: "Size",
+    data: [
+      {
+        value: "large",
+        name: "Large",
+      },
+      {
+        value: "medium",
+        name: "Medium",
+      },
+      {
+        value: "small",
+        name: "Small",
+      },
+    ],
+  },
+  {
+    section: "ice-level",
+    name: "Ice level",
+    data: [
+      {
+        value: "regular-ice",
+        name: "Regular",
+      },
+      {
+        value: "less-ice",
+        name: "Less ice",
+      },
+      {
+        value: "no-ice",
+        name: "No ice",
+      },
+    ],
+  },
+  {
+    section: "sugar-level",
+    name: "Sugar level",
+    data: [
+      {
+        value: "regular-sugar",
+        name: "Regular 100%",
+      },
+      {
+        value: "sugar-70",
+        name: "70%",
+      },
+      {
+        value: "sugar-50",
+        name: "50%",
+      },
+      {
+        value: "sugar-30",
+        name: "30%",
+      },
+      {
+        value: "no-sugar",
+        name: "No sugar",
+      },
+    ],
+  },
+  {
+    section: "extra-topping",
+    name: "Extra topping",
+    data: [
+      {
+        value: "pearl",
+        name: "Pearl",
+        price: 0.5,
+      },
+      {
+        value: "pudding",
+        name: "Pudding",
+        price: 0.5,
+      },
+      {
+        value: "grass-jelly",
+        name: "Grass Jelly",
+        price: 0.5,
+      },
+      {
+        value: "aloe-vera",
+        name: "Aloe Vera",
+        price: 0.5,
+      },
+    ],
   },
 ]

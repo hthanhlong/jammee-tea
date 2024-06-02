@@ -333,89 +333,93 @@ export const dataFooter: DataFooter[] = [
 export const dataOrder: DataOrder[] = [
   {
     section: "size",
-    name: "Size",
+    label: "Size",
     data: [
       {
         value: "large",
-        name: "Large",
+        label: "Large",
       },
       {
         value: "medium",
-        name: "Medium",
+        label: "Medium",
       },
       {
         value: "small",
-        name: "Small",
+        label: "Small",
       },
     ],
   },
   {
-    section: "ice-level",
-    name: "Ice level",
+    section: "ice_level",
+    label: "Ice level",
     data: [
       {
-        value: "regular-ice",
-        name: "Regular",
+        value: "regular_ice",
+        label: "Regular",
       },
       {
-        value: "less-ice",
-        name: "Less ice",
+        value: "less_ice",
+        label: "Less ice",
       },
       {
-        value: "no-ice",
-        name: "No ice",
+        value: "no_ice",
+        label: "No ice",
       },
     ],
   },
   {
-    section: "sugar-level",
-    name: "Sugar level",
+    section: "sugar_level",
+    label: "Sugar level",
     data: [
       {
-        value: "regular-sugar",
-        name: "Regular 100%",
+        value: "regular_sugar",
+        label: "Regular 100%",
       },
       {
-        value: "sugar-70",
-        name: "70%",
+        value: "sugar_70",
+        label: "70%",
       },
       {
-        value: "sugar-50",
-        name: "50%",
+        value: "sugar_50",
+        label: "50%",
       },
       {
-        value: "sugar-30",
-        name: "30%",
+        value: "sugar_30",
+        label: "30%",
       },
       {
-        value: "no-sugar",
-        name: "No sugar",
+        value: "no_sugar",
+        label: "No sugar",
       },
     ],
   },
   {
-    section: "extra-topping",
-    name: "Extra topping",
+    section: "extra_topping",
+    label: "Extra topping",
     data: [
+      {
+        value: "no",
+        label: "No topping",
+      },
       {
         value: "pearl",
-        name: "Pearl",
-        price: 0.5,
+        label: "Pearl",
+        price: 0.54,
       },
       {
         value: "pudding",
-        name: "Pudding",
-        price: 0.5,
+        label: "Pudding",
+        price: 0.52,
       },
       {
         value: "grass-jelly",
-        name: "Grass Jelly",
-        price: 0.5,
+        label: "Grass Jelly",
+        price: 0.56,
       },
       {
         value: "aloe-vera",
-        name: "Aloe Vera",
-        price: 0.5,
+        label: "Aloe Vera",
+        price: 0.58,
       },
     ],
   },

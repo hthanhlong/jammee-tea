@@ -32,6 +32,8 @@
         align-items: center;
         overflow: hidden;
     }
+
+
 }
 
 
@@ -44,5 +46,9 @@
 
     .flex-center {
         @apply flex items-center justify-center;
+    }
+
+    .order_form_group {
+        @apply my-4;
     }
 }

@@ -7,9 +7,9 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./features/**/*.{ts,tsx}",
     flowbite.content(),
   ],
-  prefix: "",
   theme: {
     extend: {},
   },

@@ -1,32 +1,32 @@
 import { create } from "zustand"
-import { Product } from "entities/Product"
+import { IProduct } from "entities/Product"
 
-export type OrderState = {
+export interface IOrderState {
   id: string | number
   userOrderId: string
   totalPrice: number
-  cart: Product[]
+  cart: IProduct[]
 }
 
-export type OrdersAction = {
-  addProductToCart: (product: Product) => void
+export interface IOrdersAction {
+  addProductToCart: (product: IProduct) => void
   removeProductFromCart: (id: string | number) => void
   updateProductQuantity: (id: string | number, quantity: number) => void
   clearCart: () => void
 }
 
-export type OrderStore = OrderState & OrdersAction
+export interface IOrderStore extends IOrderState, IOrdersAction {}
 
-export const initOrderStore = (): OrderState => ({
+export const initOrderStore = (): IOrderState => ({
   id: "",
   totalPrice: 0,
   userOrderId: "",
   cart: [],
 })
 
-export const useOrderStore = create<OrderStore>((set) => ({
+export const useOrderStore = create<IOrderStore>((set) => ({
   ...initOrderStore(),
-  addProductToCart: (newItem: Product) => set((state) => ({ cart: [...state.cart, newItem] })),
+  addProductToCart: (newItem: IProduct) => set((state) => ({ cart: [...state.cart, newItem] })),
   removeProductFromCart: (id: string | number) =>
     set((state) => ({ cart: state.cart.filter((item) => item.id !== id) })),
   updateProductQuantity: (id: string | number, quantity: number) =>

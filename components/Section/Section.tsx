@@ -1,6 +1,6 @@
 import React from "react"
 import ProductList from "components/ProductList/ProductList"
-import { MenuItemChild } from "types"
+import { MenuItemChild } from "interfaces"
 
 interface SectionProps {
   title: string

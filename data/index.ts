@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid"
 import { banner1, bubleTea } from "assets"
-import { DataFooter, DataOrder, MenuItem } from "types"
+import { DataFooter, DataOrder, MenuItem } from "interfaces/common"
 
 export const NavItems = [
   {

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import ProductItem from "components/ProductItem/ProductItem"
-import { MenuItemChild } from "types"
+import { MenuItemChild } from "interfaces"
 
 const ProductList = ({ ListItem }: { ListItem: MenuItemChild[] }) => {
   return (

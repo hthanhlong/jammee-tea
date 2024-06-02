@@ -1,24 +1,39 @@
 import { create } from "zustand"
+import { IProduct } from "entities/Product"
 
-export type SelectedItemState = {
-  id: string | number
-  name: string
-  price: number | string | null
+export interface ISelectProductActions {
+  selectProduct: (product: IProduct) => void
+  updateProduct: (key: string, value: unknown) => void
 }
 
-export type SelectedItemActions = {
-  setSelectedItem: ({ id, name, price }: SelectedItemState) => void
+export interface ISelectProductStore {
+  product: IProduct
+  selectProduct: (product: IProduct) => void
+  updateProduct: (key: string, value: unknown) => void
 }
 
-export type SelectedItemStore = SelectedItemState & SelectedItemActions
-
-export const initSelectedItemStore = (): SelectedItemState => ({
+export const initSelectedProductStore = (): IProduct => ({
   id: "",
   name: "",
   price: 0,
+  size: "",
+  ice_level: "",
+  sugar_level: "",
+  extra_topping: "",
+  quantity: 1,
+  note: "",
 })
 
-export const useSelectedItemStore = create<SelectedItemStore>((set) => ({
-  ...initSelectedItemStore(),
-  setSelectedItem: (newItem: SelectedItemState) => set({ ...newItem }),
+export const useSelectedProductStore = create<ISelectProductStore>((set) => ({
+  product: {
+    ...initSelectedProductStore(),
+  },
+  selectProduct: (product: IProduct) => set({ product: product }),
+  updateProduct: (key: string, value: unknown) =>
+    set((state) => ({
+      product: {
+        ...state.product,
+        [key]: value,
+      },
+    })),
 }))

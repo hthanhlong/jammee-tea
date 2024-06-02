@@ -1,29 +1,52 @@
 "use client"
-
-import { Button, Modal } from "flowbite-react"
-import { useSelectedItemStore } from "stores/selected-item-store"
-import OrderForm from "./OrderForm"
+import { Button, Label, Modal, Radio, Textarea, TextInput } from "flowbite-react"
+import { dataOrder } from "data"
+import { DataOrderItem } from "interfaces/common"
+import { IOrderFormInput } from "interfaces/form"
+import useOrderModal from "../hooks/useOrderModal"
 
 export function OrderModal() {
-  const { id, name, price, setSelectedItem } = useSelectedItemStore((state) => state)
-
-  const handleClose = () => {
-    setSelectedItem({
-      id: "",
-      name: "",
-      price: 0,
-    })
-  }
+  const { handleSubmit, register, handleClose, onSubmit, totalPrice, product } = useOrderModal()
 
   return (
-    <Modal show={!!id} onClose={handleClose}>
-      <Modal.Header>{name}</Modal.Header>
+    <Modal show={!!product.id} onClose={handleClose}>
+      <Modal.Header>{product.name}</Modal.Header>
       <Modal.Body>
-        <OrderForm />
+        <form>
+          {dataOrder.map((item) => {
+            return (
+              <div className="order_form_group" key={item.section}>
+                <Label className="text-xl">{item.label}</Label>
+                {item.data.map((data: DataOrderItem) => (
+                  <div key={data.value} className="my-1 flex items-center gap-2 border p-2">
+                    <Radio id={data.value} value={data.value} {...register(item.section as keyof IOrderFormInput)} />
+                    <Label htmlFor={data.value}>
+                      {data.label}
+                      <span>{data.price && ` - ${data.price}`}</span>
+                    </Label>
+                  </div>
+                ))}
+              </div>
+            )
+          })}
+          <div className="order_form_group">
+            <Label className="text-xl">Quantity</Label>
+            <TextInput type="number" min={1} max={20} step={1} {...register("quantity")} />
+          </div>
+          <div className="order_form_group">
+            <Label className="text-xl">Note</Label>
+            <Textarea {...register("note")} />
+          </div>
+        </form>
       </Modal.Body>
       <Modal.Footer className="h-20 p-0">
-        <Button color="warning" className="flex size-full items-center rounded-none text-center" onClick={handleClose}>
-          <p className="text-bold text-2xl">ADD TO CART - {price}$</p>
+        <Button
+          onClick={handleSubmit(onSubmit)}
+          color="warning"
+          className="flex size-full items-center rounded-none text-center"
+          type="submit"
+        >
+          <p className="text-bold text-2xl">ADD TO CART - {totalPrice.toString()}$</p>
         </Button>
       </Modal.Footer>
     </Modal>

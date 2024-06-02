@@ -26,5 +26,11 @@ export interface DataFooter {
 export interface DataOrder {
   section: string
   label: string
-  data: any[]
+  data: DataOrderItem[]
+}
+
+export interface DataOrderItem {
+  value: string
+  label: string
+  price?: number
 }

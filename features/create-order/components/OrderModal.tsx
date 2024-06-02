@@ -1,5 +1,7 @@
 "use client"
 import { Button, Label, Modal, Radio, Textarea, TextInput } from "flowbite-react"
+import Image from "next/image"
+import { bubleTea } from "assets"
 import { dataOrder } from "data"
 import { DataOrderItem } from "interfaces/common"
 import { IOrderFormInput } from "interfaces/form"
@@ -12,6 +14,13 @@ export function OrderModal() {
     <Modal show={!!product.id} onClose={handleClose}>
       <Modal.Header>{product.name}</Modal.Header>
       <Modal.Body>
+        <div className="flex gap-4">
+          <Image src={bubleTea} alt={product.name} width={60} height={60} />
+          <div className="">
+            <Label className="text-sm">{product.name}</Label>
+            <p className="text-sm">{product.description}</p>
+          </div>
+        </div>
         <form>
           {dataOrder.map((item) => {
             return (

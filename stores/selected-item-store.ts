@@ -15,6 +15,7 @@ export interface ISelectProductStore {
 export const initSelectedProductStore = (): IProduct => ({
   id: "",
   name: "",
+  description: "",
   price: 0,
   size: "",
   ice_level: "",

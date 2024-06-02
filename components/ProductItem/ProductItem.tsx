@@ -4,14 +4,14 @@ import { useSelectedProductStore } from "stores/selected-item-store"
 interface ProductItemProps {
   thumbnail: string | unknown
   name: string
-  describe: string
+  description: string
   price: number
   alt?: string
   active?: boolean
   id: string
 }
 
-const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemProps) => {
+const ProductItem = ({ thumbnail, name, description, price, alt, id }: ProductItemProps) => {
   const { product, selectProduct } = useSelectedProductStore((state) => state)
 
   return (
@@ -21,6 +21,7 @@ const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemP
           id,
           name,
           price,
+          description,
           size: "large",
           ice_level: "regular_ice",
           sugar_level: "regular_sugar",
@@ -38,7 +39,7 @@ const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemP
         <div className="flex justify-between">
           <div>{name}</div>
         </div>
-        <div className="text-xs">{describe || "hello"}</div>
+        <div className="text-xs">{description || "hello"}</div>
       </div>
       <div>{price}</div>
     </div>

@@ -11,7 +11,7 @@ export interface MenuItemChild {
   type: "item" | "banner"
   thumbnail?: string | unknown
   name: string
-  describe?: string
+  description?: string
   price?: number
   alt?: string
   url?: string | unknown

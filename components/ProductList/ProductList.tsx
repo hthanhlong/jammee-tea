@@ -1,6 +1,6 @@
 import Image from "next/image"
 import ProductItem from "components/ProductItem/ProductItem"
-import { MenuItemChild } from "interfaces"
+import { MenuItemChild } from "interfaces/common"
 
 const ProductList = ({ ListItem }: { ListItem: MenuItemChild[] }) => {
   return (
@@ -15,7 +15,7 @@ const ProductList = ({ ListItem }: { ListItem: MenuItemChild[] }) => {
               key={item.id || index}
               thumbnail={item.thumbnail || ""}
               name={item.name}
-              describe={item.describe || ""}
+              description={item.description || ""}
               price={item.price || 0}
               alt={item.alt || ""}
             />

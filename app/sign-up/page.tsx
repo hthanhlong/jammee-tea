@@ -1,7 +1,6 @@
-import React from "react"
+"use client"
+import Wrapper from "components/Wrapper/Wrapper"
 
-const SignUp = () => {
-  return <div>SignUp</div>
+export default function SignUp() {
+  return <Wrapper>hello</Wrapper>
 }
-
-export default SignUp

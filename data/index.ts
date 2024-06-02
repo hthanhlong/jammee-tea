@@ -35,7 +35,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -44,7 +44,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -53,7 +53,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -62,7 +62,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -71,7 +71,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -89,7 +89,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -98,7 +98,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -107,7 +107,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -124,7 +124,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -133,7 +133,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -142,7 +142,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -151,7 +151,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -160,7 +160,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -178,7 +178,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -187,7 +187,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -196,7 +196,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -213,7 +213,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -222,7 +222,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -231,7 +231,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -240,7 +240,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -249,7 +249,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -267,7 +267,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -276,7 +276,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",
@@ -285,7 +285,7 @@ export const MenuItems: MenuItem[] = [
       {
         id: uuidv4(),
         type: "item",
-        describe:
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Nullam nec nisl nec nunc.",
         thumbnail: bubleTea,
         name: "Milk Foam Green Tea",

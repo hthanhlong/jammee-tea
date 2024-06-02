@@ -1,7 +1,6 @@
-import React from "react"
+"use client"
+import Wrapper from "components/Wrapper/Wrapper"
 
-const Cart = () => {
-  return <div>Cart</div>
+export default function Cart() {
+  return <Wrapper>hello</Wrapper>
 }
-
-export default Cart

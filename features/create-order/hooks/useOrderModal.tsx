@@ -1,26 +1,37 @@
 import Decimal from "decimal.js"
-import { useEffect } from "react"
+import { useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
+import { extraToping } from "data"
 import { IOrderFormInput } from "interfaces/form"
 import { useOrderStore } from "stores/order-store"
-import { initSelectedProductStore, useSelectedProductStore } from "stores/selected-item-store"
+import { useSelectedProductStore } from "stores/selected-item-store"
 import { defaultValues } from "../data"
 
 const useOrderModal = () => {
-  const { selectProduct, product, updateProduct } = useSelectedProductStore((state) => state)
+  const { product, resetProduct, updateProduct } = useSelectedProductStore((state) => state)
   const { addProductToCart } = useOrderStore((state) => state)
 
   const { handleSubmit, register, watch, reset } = useForm<IOrderFormInput>({
     defaultValues: defaultValues,
   })
+
   const watchQuantity = watch("quantity")
+  const watchExtraToppingType = watch("extra_topping")
+
+  const _getPriceExtraTopping = useCallback((toppingType: string) => {
+    return extraToping.find((topping) => topping.value === toppingType)?.price
+  }, [])
 
   useEffect(() => {
     updateProduct("quantity", Number(watchQuantity))
   }, [watchQuantity, updateProduct])
 
+  useEffect(() => {
+    updateProduct("price_extra_topping", _getPriceExtraTopping(watchExtraToppingType))
+  }, [updateProduct, watchExtraToppingType, _getPriceExtraTopping])
+
   const handleClose = () => {
-    selectProduct(initSelectedProductStore())
+    resetProduct()
     reset()
   }
 
@@ -33,8 +44,7 @@ const useOrderModal = () => {
     handleClose()
   }
 
-  const totalPrice = new Decimal(product.price).mul(product.quantity)
-
+  const totalPrice = new Decimal(product.price).mul(product.quantity).add(product.price_extra_topping)
   return { handleSubmit, register, watch, reset, watchQuantity, handleClose, onSubmit, totalPrice, product }
 }
 

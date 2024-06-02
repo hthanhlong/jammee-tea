@@ -26,6 +26,7 @@ const ProductItem = ({ thumbnail, name, description, price, alt, id }: ProductIt
           ice_level: "regular_ice",
           sugar_level: "regular_sugar",
           extra_topping: "no",
+          price_extra_topping: 0,
           quantity: 1,
           note: "",
         })

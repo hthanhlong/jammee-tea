@@ -330,6 +330,38 @@ export const dataFooter: DataFooter[] = [
   },
 ]
 
+export const extraToping: {
+  value: string
+  label: string
+  price: number
+}[] = [
+  {
+    value: "no",
+    label: "No topping",
+    price: 0,
+  },
+  {
+    value: "pearl",
+    label: "Pearl",
+    price: 0.54,
+  },
+  {
+    value: "pudding",
+    label: "Pudding",
+    price: 0.52,
+  },
+  {
+    value: "grass-jelly",
+    label: "Grass Jelly",
+    price: 0.56,
+  },
+  {
+    value: "aloe-vera",
+    label: "Aloe Vera",
+    price: 0.58,
+  },
+]
+
 export const dataOrder: DataOrder[] = [
   {
     section: "size",
@@ -396,31 +428,6 @@ export const dataOrder: DataOrder[] = [
   {
     section: "extra_topping",
     label: "Extra topping",
-    data: [
-      {
-        value: "no",
-        label: "No topping",
-      },
-      {
-        value: "pearl",
-        label: "Pearl",
-        price: 0.54,
-      },
-      {
-        value: "pudding",
-        label: "Pudding",
-        price: 0.52,
-      },
-      {
-        value: "grass-jelly",
-        label: "Grass Jelly",
-        price: 0.56,
-      },
-      {
-        value: "aloe-vera",
-        label: "Aloe Vera",
-        price: 0.58,
-      },
-    ],
+    data: extraToping,
   },
 ]

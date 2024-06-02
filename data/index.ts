@@ -368,16 +368,8 @@ export const dataOrder: DataOrder[] = [
     label: "Size",
     data: [
       {
-        value: "large",
-        label: "Large",
-      },
-      {
-        value: "medium",
-        label: "Medium",
-      },
-      {
-        value: "small",
-        label: "Small",
+        value: "regular",
+        label: "Regular",
       },
     ],
   },

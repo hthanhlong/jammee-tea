@@ -3,6 +3,6 @@ export interface IOrderFormInput {
   ice_level: string
   sugar_level: string
   extra_topping: string
-  quantity: string | number
+  quantity: number
   note: string
 }

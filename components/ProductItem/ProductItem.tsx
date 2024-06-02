@@ -22,7 +22,7 @@ const ProductItem = ({ thumbnail, name, description, price, alt, id }: ProductIt
           name,
           price,
           description,
-          size: "large",
+          size: "regular",
           ice_level: "regular_ice",
           sugar_level: "regular_sugar",
           extra_topping: "no",

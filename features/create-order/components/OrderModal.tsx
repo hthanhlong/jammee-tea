@@ -31,7 +31,7 @@ export function OrderModal() {
                     <Radio id={data.value} value={data.value} {...register(item.section as keyof IOrderFormInput)} />
                     <Label htmlFor={data.value}>
                       {data.label}
-                      <span>{!!data.price && ` - ${data.price}$`}</span>
+                      <span>{!!data.price && ` +${data.price}$`}</span>
                     </Label>
                   </div>
                 ))}

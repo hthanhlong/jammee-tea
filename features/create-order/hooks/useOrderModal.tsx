@@ -15,37 +15,37 @@ const useOrderModal = () => {
     defaultValues: defaultValues,
   })
 
-  const watchQuantity = watch("quantity")
-  const watchExtraToppingType = watch("extra_topping")
-
   const _getPriceExtraTopping = useCallback((toppingType: string) => {
     return extraToping.find((topping) => topping.value === toppingType)?.price
   }, [])
 
-  useEffect(() => {
-    updateProduct("quantity", Number(watchQuantity))
-  }, [watchQuantity, updateProduct])
+  const { size, ice_level, sugar_level, extra_topping, quantity, note } = watch()
 
   useEffect(() => {
-    updateProduct("price_extra_topping", _getPriceExtraTopping(watchExtraToppingType))
-  }, [updateProduct, watchExtraToppingType, _getPriceExtraTopping])
+    updateProduct({
+      size,
+      ice_level,
+      sugar_level,
+      extra_topping,
+      note,
+      quantity: Number(quantity),
+      price_extra_topping: _getPriceExtraTopping(extra_topping) || 0,
+    })
+  }, [size, ice_level, sugar_level, extra_topping, quantity, note, updateProduct, _getPriceExtraTopping])
 
   const handleClose = () => {
     resetProduct()
     reset()
   }
 
-  const onSubmit = (data: IOrderFormInput) => {
-    addProductToCart({
-      ...product,
-      ...data,
-      quantity: Number(data.quantity as string),
-    })
+  const onSubmit = () => {
+    addProductToCart(product)
     handleClose()
   }
 
   const totalPrice = new Decimal(product.price).mul(product.quantity).add(product.price_extra_topping)
-  return { handleSubmit, register, watch, reset, watchQuantity, handleClose, onSubmit, totalPrice, product }
+
+  return { handleSubmit, register, watch, reset, handleClose, onSubmit, totalPrice, product }
 }
 
 export default useOrderModal

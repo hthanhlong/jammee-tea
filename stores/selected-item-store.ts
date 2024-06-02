@@ -1,17 +1,19 @@
 import { create } from "zustand"
 import { IProduct } from "entities/Product"
+import { IOrderFormInput } from "interfaces/form"
+
+interface IUpdateProduct extends IOrderFormInput {
+  price_extra_topping: number
+}
 
 export interface ISelectProductActions {
   selectProduct: (product: IProduct) => void
-  updateProduct: (key: string, value: unknown) => void
+  updateProduct: (product: IUpdateProduct) => void
   resetProduct: () => void
 }
 
-export interface ISelectProductStore {
+export interface ISelectProductStore extends ISelectProductActions {
   product: IProduct
-  selectProduct: (product: IProduct) => void
-  updateProduct: (key: string, value: unknown) => void
-  resetProduct: () => void
 }
 
 export const initSelectedProductStore = (): IProduct => ({
@@ -33,12 +35,6 @@ export const useSelectedProductStore = create<ISelectProductStore>((set) => ({
     ...initSelectedProductStore(),
   },
   selectProduct: (product: IProduct) => set({ product }),
-  updateProduct: (key: string, value: unknown) =>
-    set((state) => ({
-      product: {
-        ...state.product,
-        [key]: value,
-      },
-    })),
+  updateProduct: (product: IUpdateProduct) => set((state) => ({ product: { ...state.product, ...product } })),
   resetProduct: () => set({ product: initSelectedProductStore() }),
 }))

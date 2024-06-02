@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { useSelectedItemStore } from "stores/selected-item-store"
+import { useSelectedProductStore } from "stores/selected-item-store"
 interface ProductItemProps {
   thumbnail: string | unknown
   name: string
@@ -12,19 +12,25 @@ interface ProductItemProps {
 }
 
 const ProductItem = ({ thumbnail, name, describe, price, alt, id }: ProductItemProps) => {
-  const { id: selectedId, setSelectedItem } = useSelectedItemStore((state) => state)
+  const { product, selectProduct } = useSelectedProductStore((state) => state)
 
   return (
     <div
       onClick={() => {
-        setSelectedItem({
+        selectProduct({
           id,
           name,
           price,
+          size: "large",
+          ice_level: "regular_ice",
+          sugar_level: "regular_sugar",
+          extra_topping: "no",
+          quantity: 1,
+          note: "",
         })
       }}
       className={`my-2 flex cursor-pointer gap-4 border-2 border-red-50 p-2 hover:bg-red-50 ${
-        selectedId === id && "bg-red-50"
+        product.id === id && "bg-red-50"
       }`}
     >
       <Image src={(thumbnail as string) || ""} alt={alt || "banner image"} width={60} height={60} />

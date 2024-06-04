@@ -2,6 +2,7 @@ import Decimal from "decimal.js"
 import { useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { extraToping } from "data"
+import useCheckout from "features/check-out/hooks/useCheckout"
 import { IOrderFormInput } from "interfaces/form"
 import { useOrderStore } from "stores/order-store"
 import { useSelectedProductStore } from "stores/selected-item-store"
@@ -10,6 +11,7 @@ import { defaultValues } from "../data"
 const useOrderModal = () => {
   const { product, resetProduct, updateProduct } = useSelectedProductStore((state) => state)
   const { addProductToCart } = useOrderStore((state) => state)
+  const { totalQuantityOfOrder } = useCheckout()
 
   const {
     handleSubmit,
@@ -49,8 +51,9 @@ const useOrderModal = () => {
   }
 
   const totalPrice = new Decimal(product.price).mul(product.quantity).add(product.price_extra_topping)
+  const disableTextInput = totalQuantityOfOrder + Number(quantity) >= 30
 
-  return { handleSubmit, register, watch, handleClose, onSubmit, totalPrice, product }
+  return { handleSubmit, register, watch, handleClose, onSubmit, totalPrice, product, disableTextInput }
 }
 
 export default useOrderModal

@@ -9,7 +9,7 @@ import { OrderModal } from "features/create-order/components/OrderModal"
 export default function OnlineOrdering() {
   return (
     <>
-      <Wrapper>
+      <Wrapper className="p-4">
         <div>
           <Image src={mainBanner} alt="main-banner" width={1000} height={100} />
         </div>

@@ -11,7 +11,12 @@ const useOrderModal = () => {
   const { product, resetProduct, updateProduct } = useSelectedProductStore((state) => state)
   const { addProductToCart } = useOrderStore((state) => state)
 
-  const { handleSubmit, register, watch, reset } = useForm<IOrderFormInput>({
+  const {
+    handleSubmit,
+    register,
+    watch,
+    reset: restForm,
+  } = useForm<IOrderFormInput>({
     defaultValues: defaultValues,
   })
 
@@ -35,7 +40,7 @@ const useOrderModal = () => {
 
   const handleClose = () => {
     resetProduct()
-    reset()
+    restForm()
   }
 
   const onSubmit = () => {
@@ -45,7 +50,7 @@ const useOrderModal = () => {
 
   const totalPrice = new Decimal(product.price).mul(product.quantity).add(product.price_extra_topping)
 
-  return { handleSubmit, register, watch, reset, handleClose, onSubmit, totalPrice, product }
+  return { handleSubmit, register, watch, handleClose, onSubmit, totalPrice, product }
 }
 
 export default useOrderModal

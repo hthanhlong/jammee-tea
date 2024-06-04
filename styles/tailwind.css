@@ -3,52 +3,49 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --nav-height: 64px;
-        --footer-height: 180px;
-    }
+  :root {
+    --nav-height: 64px;
+    --footer-height: 80px;
+  }
 }
 
 @layer components {
-    body {
-        background-image: url("../assets/images/background.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
+  body {
+    background-image: url("../assets/images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
 
-    main {
-        height: calc(100vh - var(--nav-height) - var(--footer-height));
-        padding: 24px 0;
-        overflow: hidden;
-    }
+  main {
+    height: calc(100vh - var(--nav-height) - var(--footer-height));
+    padding: 24px 0;
+    overflow: hidden;
+  }
 
-    footer {
-        height: var(--footer-height);
-        background-color: #fff;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-
+  footer {
+    height: var(--footer-height);
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 }
 
-
 @layer utilities {
-    .wrapper {
-        max-width: 1000px;
-        margin: 0 auto;
-        height: 100%;
-    }
+  .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+  }
 
-    .flex-center {
-        @apply flex items-center justify-center;
-    }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 
-    .order_form_group {
-        @apply my-4;
-    }
+  .order_form_group {
+    @apply my-4;
+  }
 }

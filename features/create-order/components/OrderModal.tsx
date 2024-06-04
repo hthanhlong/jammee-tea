@@ -3,9 +3,9 @@ import { Button, Label, Modal, Radio, Textarea, TextInput } from "flowbite-react
 import Image from "next/image"
 import { bubleTea } from "assets"
 import { dataOrder } from "data"
+import { MAX_QUANTITY_OF_ORDER } from "features/check-out/data"
 import useCheckout from "features/check-out/hooks/useCheckout"
 import { DataOrderItem } from "interfaces/common"
-import { MAX_QUANTITY_OF_ORDER } from "features/check-out/data"
 import { IOrderFormInput } from "interfaces/form"
 import useOrderModal from "../hooks/useOrderModal"
 

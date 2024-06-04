@@ -3,6 +3,7 @@ import Decimal from "decimal.js"
 import { Label, TextInput } from "flowbite-react"
 import React from "react"
 import useCheckout from "../hooks/useCheckout"
+import { tips } from "../data"
 
 const PaymentMethods = () => {
   const { paymentMethod, setPaymentMethod, addTip, tip, totalPriceWithoutTip } = useCheckout()
@@ -59,63 +60,21 @@ const PaymentMethods = () => {
           <div className="mb-4">
             <div className="title mb-1 text-sm font-bold">Tip</div>
             <div className="flex gap-2">
-              <button
-                onClick={() => addTip(1.05)}
-                type="button"
-                className={clsx("w-full rounded-sm bg-slate-200 p-1 text-center", {
-                  "!bg-red-300": tip === 1.05,
-                })}
-              >
-                5%
-                <div className="text-xs">
-                  &#10088;{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $ &#10089;
-                </div>
-              </button>
-              <button
-                onClick={() => addTip(1.1)}
-                type="button"
-                className={clsx("w-full rounded-sm bg-slate-200 p-1 text-center", {
-                  "!bg-red-300": tip === 1.1,
-                })}
-              >
-                10%
-                <div className="text-xs">
-                  &#10088;{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $ &#10089;
-                </div>
-              </button>
-              <button
-                onClick={() => addTip(1.15)}
-                type="button"
-                className={clsx("w-full rounded-sm bg-slate-200 p-1 text-center", {
-                  "!bg-red-300": tip === 1.15,
-                })}
-              >
-                15%
-                <div className="text-xs">
-                  &#10088;{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $ &#10089;
-                </div>
-              </button>
-              <button
-                onClick={() => addTip(1.19)}
-                type="button"
-                className={clsx("w-full rounded-sm bg-slate-200 p-1 text-center", {
-                  "!bg-red-300": tip === 1.19,
-                })}
-              >
-                19%
-                <div className="text-xs">
-                  &#10088;{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $ &#10089;
-                </div>
-              </button>
-              <button
-                type="button"
-                onClick={() => addTip(1)}
-                className={clsx("w-full rounded-sm bg-slate-200 p-1 text-center", {
-                  "!bg-red-300": tip === 1,
-                })}
-              >
-                none
-              </button>
+              {tips.map((t) => (
+                <button
+                  key={t.label}
+                  type="button"
+                  className={clsx("w-full rounded-md bg-slate-200 p-2 text-center", {
+                    "!bg-red-300": tip === t.value,
+                  })}
+                  onClick={() => addTip(t.value)}
+                >
+                  {t.label}
+                  <div className="text-xs">
+                    &#10088;{new Decimal(totalPriceWithoutTip).mul(t.value - 1).toFixed(2)} $ &#10089;
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+export const NUMBER_OF_INPUTS = 6
+
 export const MAX_QUANTITY_OF_ORDER = 20
 
 export const tips = [

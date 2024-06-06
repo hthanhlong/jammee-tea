@@ -2,6 +2,7 @@
 import Wrapper from "components/Wrapper/Wrapper"
 import AvailableTimeForPickup from "features/check-out/components/AvailableTimeForPickup"
 import CustomerInformation from "features/check-out/components/CustomerInformation"
+import ModalPhoneVerification from "features/check-out/components/ModalPhoneVerification"
 import OrderingMethod from "features/check-out/components/OrderingMethod"
 import OrderSummary from "features/check-out/components/OrderSummary"
 import PaymentMethods from "features/check-out/components/PaymentMethods"
@@ -15,7 +16,7 @@ export default function Cart() {
       {cart.length === 0 ? (
         <div className="flex-center h-full">Your cart is empty</div>
       ) : (
-        <form className="flex size-full flex-col">
+        <div className="flex size-full flex-col">
           <div className="mb-2 flex gap-4 overflow-auto p-4">
             <div className="cart_left w-full">
               <CustomerInformation />
@@ -30,8 +31,9 @@ export default function Cart() {
             </div>
           </div>
           <TotalPrice />
-        </form>
+        </div>
       )}
+      <ModalPhoneVerification />
     </Wrapper>
   )
 }

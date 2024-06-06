@@ -18,11 +18,6 @@ export const NavItems = [
     name: "Cart",
     path: "/cart",
   },
-  {
-    id: 4,
-    name: "Sign In",
-    path: "/sign-in",
-  },
 ]
 
 export const MenuItems: MenuItem[] = [

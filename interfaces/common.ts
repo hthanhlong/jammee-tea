@@ -34,3 +34,10 @@ export interface DataOrderItem {
   label: string
   price?: number
 }
+
+export interface TimePickUp {
+  startHour: number
+  startMinute: number
+  value: string
+  label: string
+}

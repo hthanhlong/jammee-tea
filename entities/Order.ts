@@ -2,9 +2,10 @@ import { IProduct } from "./Product"
 
 export interface Order {
   id: string | number
-  userOrderId: string
+  userId: string
   tip: number
   taxGST: number
   paymentMethod: string
+  timePickUp: string
   cart: IProduct[]
 }

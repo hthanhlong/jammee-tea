@@ -7,7 +7,7 @@ import { MAX_QUANTITY_OF_ORDER } from "../data"
 import useCheckout from "../hooks/useCheckout"
 
 const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
-  const { totalPriceWithoutTip, priceOfTax, tip, finalPrice, totalQuantityOfOrder } = useCheckout()
+  const { totalPriceWithoutTip, priceOfTax, tip, finalPrice, totalQuantityOfOrder, paymentMethod } = useCheckout()
   const { decreaseQuantityOfProduct, increaseQuantityOfProduct } = useOrderStore()
   return (
     <>
@@ -43,9 +43,8 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
                     type="button"
                     disabled={totalQuantityOfOrder >= MAX_QUANTITY_OF_ORDER}
                     onClick={() => increaseQuantityOfProduct(item.id as string)}
-                    className={clsx(" w-full rounded-sm bg-red-200 p-3 transition-all hover:bg-red-300 ", {
-                      "!hover:bg-slate-200 !cursor-not-allowed !bg-slate-200":
-                        totalQuantityOfOrder >= MAX_QUANTITY_OF_ORDER,
+                    className={clsx("w-full rounded-sm bg-red-200 p-3 transition-all hover:bg-red-300", {
+                      "opacity-50 disabled:pointer-events-none": totalQuantityOfOrder >= MAX_QUANTITY_OF_ORDER,
                     })}
                   >
                     +
@@ -71,10 +70,12 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
             <div>GST 5%</div>
             <div>{priceOfTax} $</div>
           </div>
-          <div className="flex justify-between text-xs">
-            <div>Tip</div>
-            <div>{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $</div>
-          </div>
+          {paymentMethod === "online" && (
+            <div className="flex justify-between text-xs">
+              <div>Tip</div>
+              <div>{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $</div>
+            </div>
+          )}
           <div className="text-md mt-4 flex justify-between border-t-2">
             <div>Total</div>
             <div>{finalPrice} $</div>

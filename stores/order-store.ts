@@ -4,6 +4,8 @@ import { IProduct } from "entities/Product"
 
 export interface IOrdersAction {
   addTip: (tip: number) => void
+  updateUserId: (userId: string) => void
+  updateTimePickUp: (timePickUp: string) => void
   decreaseQuantityOfProduct: (id: string) => void
   increaseQuantityOfProduct: (id: string) => void
   addProductToCart: (product: IProduct) => void
@@ -16,9 +18,10 @@ export interface IOrderStore extends Order, IOrdersAction {}
 
 export const initOrderStore = (): Order => ({
   id: "",
-  userOrderId: "",
+  userId: "",
   taxGST: 0.05,
   tip: 1,
+  timePickUp: "",
   paymentMethod: "in-person",
   cart: [],
 })
@@ -26,6 +29,8 @@ export const initOrderStore = (): Order => ({
 export const useOrderStore = create<IOrderStore>((set) => ({
   ...initOrderStore(),
   addTip: (tip: number) => set({ tip }),
+  updateUserId: (userId: string) => set({ userId }),
+  updateTimePickUp: (timePickUp: string) => set({ timePickUp }),
   decreaseQuantityOfProduct: (id: string) =>
     set((state) => {
       const item = state.cart.find((item) => item.id === id)

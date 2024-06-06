@@ -1,12 +1,11 @@
 "use client"
 import Wrapper from "components/Wrapper/Wrapper"
+import CustomerInformation from "features/auth/components/CustomerInformation"
 import AvailableTimeForPickup from "features/check-out/components/AvailableTimeForPickup"
-import CustomerInformation from "features/check-out/components/CustomerInformation"
-import ModalPhoneVerification from "features/check-out/components/ModalPhoneVerification"
 import OrderingMethod from "features/check-out/components/OrderingMethod"
 import OrderSummary from "features/check-out/components/OrderSummary"
 import PaymentMethods from "features/check-out/components/PaymentMethods"
-import TotalPrice from "features/check-out/components/TotalPrice"
+import TotalPriceOnPlaceOrder from "features/check-out/components/TotalPriceOnPlaceOrder"
 import { useOrderStore } from "stores/order-store"
 
 export default function Cart() {
@@ -30,10 +29,9 @@ export default function Cart() {
               <OrderSummary cart={cart} />
             </div>
           </div>
-          <TotalPrice />
+          <TotalPriceOnPlaceOrder />
         </div>
       )}
-      <ModalPhoneVerification />
     </Wrapper>
   )
 }

@@ -1,9 +1,17 @@
 "use client"
 import { Modal } from "flowbite-react"
 import React, { useEffect, useState } from "react"
+import { useOrderStore } from "stores/order-store"
 import { NUMBER_OF_INPUTS } from "../data"
 
-const ModalPhoneVerification = () => {
+const ModalPhoneVerification = ({
+  isOpen,
+  onSetIsModalOpen,
+}: {
+  isOpen: boolean
+  onSetIsModalOpen: (value: boolean) => void
+}) => {
+  const { updateUserId } = useOrderStore()
   const [inputValues, setInputValues] = useState<string[]>(Array(NUMBER_OF_INPUTS).fill(""))
   const [focusIndex, setFocusIndex] = useState<number>(0)
 
@@ -18,6 +26,13 @@ const ModalPhoneVerification = () => {
       })
       setFocusIndex((prev) => (prev === NUMBER_OF_INPUTS - 1 ? prev : prev + 1))
     }
+  }
+
+  const handleCloseModal = () => {
+    setInputValues(Array(NUMBER_OF_INPUTS).fill(""))
+    setFocusIndex(0)
+    onSetIsModalOpen(false)
+    updateUserId("123")
   }
 
   useEffect(() => {
@@ -64,7 +79,7 @@ const ModalPhoneVerification = () => {
   }, [focusIndex])
 
   return (
-    <Modal show={true}>
+    <Modal show={isOpen}>
       <Modal.Body>
         <form>
           <div className="text-center text-2xl">Please Verify Your Phone Number</div>
@@ -90,7 +105,11 @@ const ModalPhoneVerification = () => {
               <button>Didn&apos;t get the otp Resend</button>
             </div>
             <div className="flex-center">
-              <button className="rounded-sm bg-red-400 px-4 py-2 hover:bg-slate-400" type="button">
+              <button
+                onClick={handleCloseModal}
+                className="rounded-sm bg-red-400 px-4 py-2 hover:bg-slate-400"
+                type="button"
+              >
                 Verify & Continue
               </button>
             </div>

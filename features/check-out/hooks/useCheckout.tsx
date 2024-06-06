@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useOrderStore } from "stores/order-store"
 
 const useCheckout = () => {
-  const { cart, tip, paymentMethod, addTip, setPaymentMethod, taxGST } = useOrderStore()
+  const { cart, tip, paymentMethod, addTip, setPaymentMethod, taxGST, userId } = useOrderStore()
 
   const totalPriceWithoutTip = cart
     .reduce((acc, item) => {
@@ -14,6 +14,7 @@ const useCheckout = () => {
   const totalPriceWithTip = new Decimal(totalPriceWithoutTip).mul(tip).toFixed(2)
 
   useEffect(() => {
+    // reset tip to 1 if payment method is in-person
     if (paymentMethod === "in-person") {
       addTip(1)
     } else {
@@ -35,6 +36,7 @@ const useCheckout = () => {
     priceOfTax,
     finalPrice,
     totalQuantityOfOrder,
+    userId,
     setPaymentMethod,
     addTip,
   }

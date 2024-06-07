@@ -34,11 +34,15 @@ const AvailableTimeForPickup = () => {
     <div className="available_time_pickup mb-4 w-full">
       <div className="title mb-1 text-sm font-bold">Available time for pickup</div>
       <Select defaultValue={timePickUp} onChange={(e) => updateTimePickUp(e.target.value)} id="time_pick_up" required>
-        {filterAvailableTimeForPickup().map((time) => (
-          <option key={time.value} value={time.value}>
-            {time.label}
-          </option>
-        ))}
+        {filterAvailableTimeForPickup().length > 0 ? (
+          filterAvailableTimeForPickup().map((time) => (
+            <option key={time.value} value={time.value}>
+              {time.label}
+            </option>
+          ))
+        ) : (
+          <option value="no_time">No available time</option>
+        )}
       </Select>
     </div>
   )

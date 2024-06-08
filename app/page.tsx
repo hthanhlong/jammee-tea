@@ -1,4 +1,5 @@
 import { Button } from "flowbite-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -6,9 +7,9 @@ export default function Home() {
       <div className="text-white">
         <div className="text-7xl">Hello</div>
         <div className="text-6xl">Welcome to my store</div>
-        <Button href="/online-ordering" className="w-[400px] text-2xl text-black">
-          Online ordering
-        </Button>
+        <Link href="/online-ordering" className="w-[400px] text-2xl text-black">
+          <Button>Online ordering</Button>
+        </Link>
       </div>
     </div>
   )

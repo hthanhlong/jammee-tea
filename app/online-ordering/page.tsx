@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import { mainBanner } from "assets"
 import Section from "components/Section/Section"

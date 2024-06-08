@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Happy shopping!",
 }
 
-export default function RootLayout({
+export default function OnlineOrderingLayout({
   children,
 }: Readonly<{
   children: React.ReactNode

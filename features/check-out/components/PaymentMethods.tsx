@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import React from "react"
-import PaymentForm from "./PaymentForm"
+import PaymentForm from "./ElementsForm"
 import Tip from "./Tip"
 import useCheckout from "../hooks/useCheckout"
 

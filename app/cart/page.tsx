@@ -1,6 +1,6 @@
 "use client"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
-import { StripeError } from "@stripe/stripe-js"
+// import { StripeError } from "@stripe/stripe-js"
 import Wrapper from "components/Wrapper/Wrapper"
 import CustomerInformation from "features/auth/components/CustomerInformation"
 import { createPaymentIntent } from "features/check-out/actions/stripe"
@@ -43,7 +43,7 @@ export default function Cart() {
         // setErrorMessage(confirmError.message ?? "An unknown error occurred")
       }
     } catch (err) {
-      const { message } = err as StripeError
+      // const { message } = err as StripeError
       // setPayment({ status: "error" })
       // setErrorMessage(message ?? "An unknown error occurred")
     }

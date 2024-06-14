@@ -3,12 +3,12 @@ import React from "react"
 import { useIsCheckoutStore } from "stores/is-checkout-store"
 import useCheckout from "../hooks/useCheckout"
 
-const TotalPriceOnPlaceOrder = ({ finalPrice }: { finalPrice: string }) => {
+const TotalPriceOnPlaceOrder = ({ finalPrice, status }: { finalPrice: string; status: string }) => {
   const { userId } = useCheckout()
   const { setIsCheckout } = useIsCheckoutStore()
   return (
     <button
-      disabled={!userId}
+      disabled={!userId || status === "loading"}
       type="submit"
       className={clsx(
         "flex-center mt-auto flex min-h-14 gap-5 bg-red-200 text-xl transition-all hover:bg-orange-400",
@@ -16,8 +16,13 @@ const TotalPriceOnPlaceOrder = ({ finalPrice }: { finalPrice: string }) => {
       )}
       onClick={() => setIsCheckout(true)}
     >
-      Place Order
-      <span>Total: {finalPrice} $</span>|<span>Place Order</span>
+      {status === "loading" ? (
+        "Loading..."
+      ) : (
+        <>
+          <span>Total: {finalPrice} $</span>|<span>Place Order</span>
+        </>
+      )}
     </button>
   )
 }

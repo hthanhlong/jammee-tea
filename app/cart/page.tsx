@@ -1,6 +1,7 @@
 "use client"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 // import { StripeError } from "@stripe/stripe-js"
+import { useState } from "react"
 import Wrapper from "components/Wrapper/Wrapper"
 import CustomerInformation from "features/auth/components/CustomerInformation"
 import { createPaymentIntent } from "features/check-out/actions/stripe"
@@ -17,6 +18,7 @@ export default function Cart() {
   const { finalPrice } = useCheckout()
   const stripe = useStripe()
   const elements = useElements()
+  const [status, setStatus] = useState("")
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     try {
@@ -24,7 +26,7 @@ export default function Cart() {
       // Abort if form isn't valid
       if (!e.currentTarget.reportValidity()) return
       if (!elements || !stripe || !finalPrice) return
-      elements.update({ amount: 999 * 100 })
+      setStatus("loading")
       const { error: submitError } = await elements.submit()
       if (submitError) {
         // setErrorMessage(submitError.message ?? "An unknown error occurred")
@@ -38,6 +40,7 @@ export default function Cart() {
           return_url: `${window.location.origin}/check-out/success`,
         },
       })
+
       if (confirmError) {
         // setPayment({ status: "error" })
         // setErrorMessage(confirmError.message ?? "An unknown error occurred")
@@ -46,6 +49,8 @@ export default function Cart() {
       // const { message } = err as StripeError
       // setPayment({ status: "error" })
       // setErrorMessage(message ?? "An unknown error occurred")
+    } finally {
+      setStatus("")
     }
   }
 
@@ -55,7 +60,6 @@ export default function Cart() {
         <div className="flex-center h-full">Your cart is empty</div>
       ) : (
         <form className="flex size-full flex-col" onSubmit={handleSubmit}>
-        
           <div className="mb-2 flex gap-4 overflow-auto p-4 max-lg:flex-col">
             <div className="cart_left w-full">
               <CustomerInformation />
@@ -70,7 +74,7 @@ export default function Cart() {
             </div>
           </div>
           <input type="text" name="amount" hidden value={finalPrice} />
-          <TotalPriceOnPlaceOrder finalPrice={finalPrice} />
+          <TotalPriceOnPlaceOrder finalPrice={finalPrice} status={status} />
         </form>
       )}
     </Wrapper>

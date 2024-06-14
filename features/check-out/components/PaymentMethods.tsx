@@ -1,6 +1,6 @@
+import { PaymentElement } from "@stripe/react-stripe-js"
 import clsx from "clsx"
 import React from "react"
-import PaymentForm from "./ElementsForm"
 import Tip from "./Tip"
 import useCheckout from "../hooks/useCheckout"
 
@@ -34,7 +34,7 @@ const PaymentMethods = () => {
       </div>
       {paymentMethod === "online" && (
         <>
-          <PaymentForm />
+          <PaymentElement />
           <Tip />
         </>
       )}

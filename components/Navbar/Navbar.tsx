@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <section className="h-[var(--nav-height)] bg-red-200">
       <div className="wrapper">
-        <div className="flex size-full items-center justify-between">
+        <div className="flex size-full items-center justify-between max-lg:px-10">
           <div className="logo">Logo</div>
           <nav>
             <ul className="flex gap-12 font-semibold text-black">

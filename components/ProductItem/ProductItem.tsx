@@ -31,18 +31,18 @@ const ProductItem = ({ thumbnail, name, description, price, alt, id }: ProductIt
           note: "",
         })
       }}
-      className={`my-2 flex cursor-pointer gap-4 border-2 border-red-50 p-2 hover:bg-red-50 ${
+      className={`my-2 flex w-full cursor-pointer gap-4 border-2 border-red-50 p-2 hover:bg-red-50 ${
         product.id === id && "bg-red-50"
       }`}
     >
       <Image src={(thumbnail as string) || ""} alt={alt || "banner image"} width={60} height={60} />
-      <div className="content">
+      <div className="content mr-4">
         <div className="flex justify-between">
           <div>{name}</div>
         </div>
         <div className="text-xs">{description || "hello"}</div>
       </div>
-      <div>{price}</div>
+      <div className="ml-auto">{price}$</div>
     </div>
   )
 }

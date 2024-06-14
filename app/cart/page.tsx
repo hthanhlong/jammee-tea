@@ -55,6 +55,7 @@ export default function Cart() {
         <div className="flex-center h-full">Your cart is empty</div>
       ) : (
         <form className="flex size-full flex-col" onSubmit={handleSubmit}>
+        
           <div className="mb-2 flex gap-4 overflow-auto p-4 max-lg:flex-col">
             <div className="cart_left w-full">
               <CustomerInformation />

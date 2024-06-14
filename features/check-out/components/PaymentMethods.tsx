@@ -34,6 +34,10 @@ const PaymentMethods = () => {
       </div>
       {paymentMethod === "online" && (
         <>
+          <div className="mb-1 p-4 text-sm text-red-500">
+            The payment feature is on testing mode. <br />
+            Please type 4242 4242 4242 4242 on card number
+          </div>
           <PaymentElement />
           <Tip />
         </>

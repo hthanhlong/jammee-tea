@@ -81,7 +81,7 @@ const ModalPhoneVerification = ({
   return (
     <Modal show={isOpen}>
       <Modal.Body>
-        <form>
+        <form id="verify phone">
           <div className="text-center text-2xl">Please Verify Your Phone Number</div>
           <p className="text-center">Enter the code we sent to your email address to verify your phone number:</p>
           <div>
@@ -92,7 +92,7 @@ const ModalPhoneVerification = ({
                     onClick={() => setFocusIndex(index)}
                     id={`otp-${index}`}
                     key={index}
-                    className="size-[50px] rounded-sm border border-gray-300 text-center"
+                    className="size-[40px] rounded-sm border border-gray-300 text-center"
                     type="text"
                     onChange={(e) => handleOnchange(e, index)}
                     maxLength={1}

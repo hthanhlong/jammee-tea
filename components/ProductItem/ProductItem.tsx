@@ -35,12 +35,12 @@ const ProductItem = ({ thumbnail, name, description, price, alt, id }: ProductIt
         product.id === id && "bg-red-50"
       }`}
     >
-      <Image src={(thumbnail as string) || ""} alt={alt || "banner image"} width={60} height={60} />
+      <Image src={(thumbnail as string) || ""} alt={alt || "banner image"} className="size-[60px] max-sm:size-[48px]" />
       <div className="content mr-4">
         <div className="flex justify-between">
           <div>{name}</div>
         </div>
-        <div className="text-xs">{description || "hello"}</div>
+        <div className="text-xs max-sm:text-[10px]">{description || "hello"}</div>
       </div>
       <div className="ml-auto">{price}$</div>
     </div>

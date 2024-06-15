@@ -10,9 +10,13 @@ const NavBar = () => {
     <section className="h-[var(--nav-height)] bg-red-200">
       <div className="wrapper">
         <div className="flex size-full items-center justify-between max-lg:px-10">
-          <div className="logo">Logo</div>
+          <div className="logo">
+            <Link href="/">
+              <h1 className="text-lg font-bold text-black">Jammee</h1>
+            </Link>
+          </div>
           <nav>
-            <ul className="flex gap-12 font-semibold text-black">
+            <ul className="flex gap-12 font-semibold text-black max-sm:gap-3 max-sm:text-xs">
               {NavItems.map((item, index) => (
                 <li key={index}>
                   <Link className={`${path === item.path && "text-red-500"} `} href={`${item.path}`}>

@@ -56,7 +56,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="flex gap-24 p-4 max-lg:text-xs">
+    <footer className="flex gap-24 p-4 max-lg:text-xs max-sm:gap-1">
       {dataFooter.map((item) => (
         <div key={item.id}>{renderContent(item)}</div>
       ))}

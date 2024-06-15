@@ -38,12 +38,12 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
                 <td className="px-6 py-4">
                   {new Decimal(item.price).mul(item.quantity).add(item.price_extra_topping).toFixed(2)}
                 </td>
-                <td className="flex gap-2 px-6 py-4">
+                <td className="flex gap-2 px-6 py-4 max-sm:flex-col">
                   <button
                     type="button"
                     disabled={totalQuantityOfOrder >= MAX_QUANTITY_OF_ORDER}
                     onClick={() => increaseQuantityOfProduct(item.id as string)}
-                    className={clsx("w-full rounded-sm bg-red-200 p-3 transition-all hover:bg-red-300", {
+                    className={clsx("w-full rounded-sm bg-red-200 p-2 transition-all hover:bg-red-300", {
                       "opacity-50 disabled:pointer-events-none": totalQuantityOfOrder >= MAX_QUANTITY_OF_ORDER,
                     })}
                   >
@@ -52,7 +52,7 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
                   <button
                     type="button"
                     onClick={() => decreaseQuantityOfProduct(item.id as string)}
-                    className="w-full rounded-sm bg-red-200 p-3 transition-all hover:bg-red-300"
+                    className="w-full rounded-sm bg-red-200 p-2 transition-all hover:bg-red-300"
                   >
                     -
                   </button>
@@ -77,8 +77,8 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
             </div>
           )}
           <div className="text-md mt-4 flex justify-between border-t-2">
-            <div>Total</div>
-            <div>{finalPrice} $</div>
+            <div className="text-lg">Total</div>
+            <div className="text-lg">{finalPrice} $</div>
           </div>
         </div>
       </div>

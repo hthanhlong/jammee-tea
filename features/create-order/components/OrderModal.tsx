@@ -10,7 +10,8 @@ import { IOrderFormInput } from "interfaces/form"
 import useOrderModal from "../hooks/useOrderModal"
 
 export function OrderModal() {
-  const { handleSubmit, register, handleClose, onSubmit, totalPrice, product, disableTextInput } = useOrderModal()
+  const { handleSubmit, register, handleClose, addProductToCart, totalPrice, product, disableTextInput } =
+    useOrderModal()
   const { totalQuantityOfOrder } = useCheckout()
 
   return (
@@ -24,7 +25,12 @@ export function OrderModal() {
             <p className="text-sm">{product.description}</p>
           </div>
         </div>
-        <form>
+        <form
+          onSubmit={handleSubmit(() => {
+            addProductToCart(product)
+            handleClose()
+          })}
+        >
           {dataOrder.map((item) => {
             return (
               <div className="order_form_group" key={item.section}>
@@ -49,19 +55,16 @@ export function OrderModal() {
             <Label className="text-xl">Note</Label>
             <Textarea {...register("note")} />
           </div>
+          <Button
+            disabled={totalQuantityOfOrder === MAX_QUANTITY_OF_ORDER}
+            color="warning"
+            className="flex size-full items-center rounded-none text-center"
+            type="submit"
+          >
+            <p className="text-bold text-2xl">ADD TO CART - {totalPrice.toFixed(2)}$</p>
+          </Button>
         </form>
       </Modal.Body>
-      <Modal.Footer className="h-20 p-0">
-        <Button
-          disabled={totalQuantityOfOrder === MAX_QUANTITY_OF_ORDER}
-          onClick={handleSubmit(onSubmit)}
-          color="warning"
-          className="flex size-full items-center rounded-none text-center"
-          type="submit"
-        >
-          <p className="text-bold text-2xl">ADD TO CART - {totalPrice.toFixed(2)}$</p>
-        </Button>
-      </Modal.Footer>
     </Modal>
   )
 }

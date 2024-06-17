@@ -21,9 +21,7 @@ const Tip = () => {
             onClick={() => addTip(t.value)}
           >
             {t.label}
-            <div className="text-xs">
-              &#10088;{new Decimal(totalPriceWithoutTip).mul(t.value - 1).toFixed(2)} $ &#10089;
-            </div>
+            <div className="text-xs">{new Decimal(totalPriceWithoutTip).mul(t.value - 1).toFixed(2)}$</div>
           </button>
         ))}
       </div>

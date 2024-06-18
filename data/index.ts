@@ -13,11 +13,6 @@ export const NavItems = [
     name: "Order Online",
     path: "/online-ordering",
   },
-  {
-    id: 3,
-    name: "Cart",
-    path: "/cart",
-  },
 ]
 
 export const MenuItems: MenuItem[] = [
@@ -418,5 +413,3 @@ export const dataOrder: DataOrder[] = [
     data: extraToping,
   },
 ]
-
-

@@ -1,5 +1,4 @@
 import Decimal from "decimal.js"
-import { useEffect } from "react"
 import { useOrderStore } from "stores/order-store"
 
 const useCheckout = () => {
@@ -12,15 +11,6 @@ const useCheckout = () => {
     .toFixed(2)
 
   const totalPriceWithTip = new Decimal(totalPriceWithoutTip).mul(tip).toFixed(2)
-
-  useEffect(() => {
-    // reset tip to 1 if payment method is in-person
-    if (paymentMethod === "in-person") {
-      addTip(1)
-    } else {
-      addTip(1.05)
-    }
-  }, [addTip, paymentMethod])
 
   const priceOfTax = new Decimal(totalPriceWithoutTip).mul(taxGST).toFixed(2)
 

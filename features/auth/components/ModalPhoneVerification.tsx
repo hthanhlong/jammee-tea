@@ -3,6 +3,7 @@ import { Modal } from "flowbite-react"
 import React, { useEffect, useState } from "react"
 import { useOrderStore } from "stores/order-store"
 import { NUMBER_OF_INPUTS } from "../data"
+import useAuth from "../hooks/useAuth"
 
 const ModalPhoneVerification = ({
   isOpen,
@@ -12,8 +13,9 @@ const ModalPhoneVerification = ({
   onSetIsModalOpen: (value: boolean) => void
 }) => {
   const { updateUserId } = useOrderStore()
-  const [inputValues, setInputValues] = useState<string[]>(Array(NUMBER_OF_INPUTS).fill(""))
+  const [inputValues, setInputValues] = useState<string[]>(Array(NUMBER_OF_INPUTS).fill("1"))
   const [focusIndex, setFocusIndex] = useState<number>(0)
+  const { setIsDisabledVerification } = useAuth()
 
   const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const { value } = e.target
@@ -31,8 +33,9 @@ const ModalPhoneVerification = ({
   const handleCloseModal = () => {
     setInputValues(Array(NUMBER_OF_INPUTS).fill(""))
     setFocusIndex(0)
-    onSetIsModalOpen(false)
+    setIsDisabledVerification(true)
     updateUserId("123")
+    onSetIsModalOpen(false)
   }
 
   useEffect(() => {
@@ -107,7 +110,7 @@ const ModalPhoneVerification = ({
             <div className="flex-center">
               <button
                 onClick={handleCloseModal}
-                className="rounded-sm bg-red-400 px-4 py-2 hover:bg-slate-400"
+                className="rounded-sm bg-red-400 px-4 py-2 hover:bg-red-300"
                 type="button"
               >
                 Verify & Continue

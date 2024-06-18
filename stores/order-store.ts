@@ -20,7 +20,7 @@ export const initOrderStore = (): Order => ({
   id: "",
   userId: "",
   taxGST: 0.05,
-  tip: 1,
+  tip: 1.05,
   timePickUp: "",
   paymentMethod: "in-person",
   cart: [],

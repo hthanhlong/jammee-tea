@@ -4,7 +4,7 @@ const OrderingMethod = () => {
   return (
     <div className="ordering_methods mb-4 w-full">
       <div className="title mb-1 text-sm font-bold">Ordering Methods</div>
-      <p>Pickup</p>
+      <p>Pick-up</p>
     </div>
   )
 }

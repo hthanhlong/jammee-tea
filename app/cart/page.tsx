@@ -4,6 +4,7 @@ import { useElements, useStripe } from "@stripe/react-stripe-js"
 import { useState } from "react"
 import Wrapper from "components/Wrapper/Wrapper"
 import CustomerInformation from "features/auth/components/CustomerInformation"
+import AuthProvider from "features/auth/provider/AuthProvider"
 import { createPaymentIntent } from "features/check-out/actions/stripe"
 import AvailableTimeForPickup from "features/check-out/components/AvailableTimeForPickup"
 import OrderingMethod from "features/check-out/components/OrderingMethod"
@@ -62,7 +63,9 @@ export default function Cart() {
         <form className="flex size-full flex-col" onSubmit={handleSubmit}>
           <div className="mb-2 flex gap-4 overflow-auto p-4 max-lg:flex-col">
             <div className="cart_left w-full">
-              <CustomerInformation />
+              <AuthProvider>
+                <CustomerInformation />
+              </AuthProvider>
               <div className="flex gap-4">
                 <OrderingMethod />
                 <AvailableTimeForPickup />
@@ -73,7 +76,7 @@ export default function Cart() {
               <OrderSummary cart={cart} />
             </div>
           </div>
-          <input type="text" name="amount" hidden value={finalPrice} />
+          <input type="text" name="amount" hidden defaultValue={finalPrice} />
           <TotalPriceOnPlaceOrder finalPrice={finalPrice} status={status} />
         </form>
       )}

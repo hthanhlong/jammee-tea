@@ -70,12 +70,10 @@ const OrderSummary = ({ cart }: { cart: IProduct[] }) => {
             <div>GST 5%</div>
             <div>{priceOfTax} $</div>
           </div>
-          {paymentMethod === "online" && (
-            <div className="flex justify-between text-xs">
-              <div>Tip</div>
-              <div>{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $</div>
-            </div>
-          )}
+          <div className="flex justify-between text-xs">
+            <div>Tip</div>
+            <div>{new Decimal(totalPriceWithoutTip).mul(tip - 1).toFixed(2)} $</div>
+          </div>
           <div className="text-md mt-4 flex justify-between border-t-2">
             <div className="text-lg">Total</div>
             <div className="text-lg">{finalPrice} $</div>
